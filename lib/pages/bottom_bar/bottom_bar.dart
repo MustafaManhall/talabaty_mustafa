@@ -2,6 +2,7 @@ import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
 import 'package:circle_bottom_navigation_bar/widgets/tab_data.dart';
 import 'package:flutter/material.dart';
 
+import '../food_page/food_page.dart';
 import '../home_page/home_page.dart';
 
 
@@ -15,7 +16,7 @@ class bottom_bar extends StatefulWidget {
 class _bottom_barState extends State<bottom_bar> {
   int currentPage = 0;
   final List<Widget> _pages = [
-    talabaty_home(),
+    food_page(),
     talabaty_home(),
     talabaty_home(),
     talabaty_home(),
