@@ -9,6 +9,7 @@ class food_page extends StatefulWidget {
 
 class _food_pageState extends State<food_page> {
   int _itemCount = 0;
+  int _itemCount2 = 6500;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -261,7 +262,7 @@ class _food_pageState extends State<food_page> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                                  _itemCount != 0
+                                  _itemCount != 1
                                       ? Container(
                                           height: 40,
                                           width: 40,
@@ -290,14 +291,16 @@ class _food_pageState extends State<food_page> {
                                       child: IconButton(
                                           icon: Icon(Icons.add),
                                           onPressed: () =>
-                                              setState(() => _itemCount++)))
+                                              setState(() => _itemCount++,),
+                                      ),
+                                  )
                                 ],
                               ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(right: 150),
                               child: Text(
-                                "6500 د.ع",
+                                _itemCount2.toString(),
                                 style:
                                     TextStyle(color: Colors.red, fontSize: 25),
                               ),
