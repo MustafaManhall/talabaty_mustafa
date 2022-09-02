@@ -25,8 +25,7 @@ class _food_pageState extends State<food_page> {
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    Image.network(
-                        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwmJfKrL0IHhn9Gp2mhhD3gXJgNzbPo67tVkUUB5Xv0NzaOtRkehWx3kvAQDZJCNKsWIdFaeqDAmaetfmG8kk2AAoXlpN0dmCc0Hcxuak-XIIg3MEbsvLRWzFpw-2PHiYcYdFzklua0pGJHcH6NL2b1dWczWgHruTdhVCm2HUHxV_IAxtJXmX2MHtLRg/s1280/eneeJkUkbn.jpeg"),
+                    Image.asset("assets/images/talabaty_logo.jpg"),
                     Positioned(
                       right: 10,
                       top: 10,

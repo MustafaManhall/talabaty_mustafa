@@ -8,6 +8,30 @@ class talabaty_home extends StatefulWidget {
 }
 
 class _talabaty_homeState extends State<talabaty_home> {
+  List<String> imagelist = [
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://www.arrajol.com/sites/default/files/styles/800x533/public/2018/07/16/223141-1.jpg",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://www.arrajol.com/sites/default/files/styles/800x533/public/2018/07/16/223141-1.jpg",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+  ];
+  List<String> textlist = [
+    "اللحوم",
+    "بلوشي",
+    "دايت فود",
+    "مشروبات دايت",
+    "مكتبات",
+    "اسواق",
+    "مطاعم",
+    "كافيهات",
+    "جرزات",
+    "بقالة",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,40 +83,23 @@ class _talabaty_homeState extends State<talabaty_home> {
                 padding: EdgeInsets.only(top: 10),
                 children: [
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      image_text(
-                          "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                          "اللحوم"),
                       SizedBox(
-                        width: 10,
+                        height: 150,
+                        child: ListView.builder(
+                            reverse: true,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 10,
+                            itemBuilder: (BuildContext context,int index){
+                              return Padding(
+                                padding: const EdgeInsets.all(5),
+                                child: image_text(index),
+                              );
+                            }
+                        ),
                       ),
-                      image_text(
-                          "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                          "الفواكه والخضراوات"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      image_text(
-                          "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                          "دايت فود"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      image_text(
-                          "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                          "حلويات ومعجنات"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      image_text(
-                          "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                          "بلوشي"),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      image_text(
-                          "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-                          "المطاعم"),
                     ],
                   ),
                 ],
@@ -246,19 +253,23 @@ class _talabaty_homeState extends State<talabaty_home> {
     );
   }
 
-  Column image_text(String imagePath, String text) {
+  Column image_text(int index) {
     return Column(
       children: [
         Container(
-          height: 120,
+          height: 100,
           width: 100,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Colors.red,
-              image: DecorationImage(image: NetworkImage(imagePath))),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                  image: NetworkImage(imagelist[index])
+              )
+          ),
         ),
         Text(
-          text,
+          textlist[index],
           style: TextStyle(
               color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold),
         ),

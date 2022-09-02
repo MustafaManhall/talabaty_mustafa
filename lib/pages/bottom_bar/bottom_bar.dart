@@ -1,6 +1,7 @@
 import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
 import 'package:circle_bottom_navigation_bar/widgets/tab_data.dart';
 import 'package:flutter/material.dart';
+import 'package:talabaty_mustafa_manhal/pages/Register_Page/register_page.dart';
 
 import '../food_page/food_page.dart';
 import '../home_page/home_page.dart';
@@ -17,7 +18,7 @@ class _bottom_barState extends State<bottom_bar> {
   int currentPage = 0;
   final List<Widget> _pages = [
     food_page(),
-    talabaty_home(),
+    sing_in(),
     talabaty_home(),
     talabaty_home(),
   ];
